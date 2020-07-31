@@ -1,6 +1,7 @@
 export default theme => ({
     list: {
-        display: 'block'
+        display: 'block',
+        marginRight: 70
     },
     listItem: {
         listStyle: 'none',

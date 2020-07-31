@@ -9,13 +9,28 @@ export default theme => ({
         display: 'none',
     },
     content: {
-        padding: '0 25%',
+        padding: 25,
         border: '1px solid blue',
         maxWidth: 1120,
-        margin: '0 auto',
+        minWidth: 480,
+        margin: 'auto',
     },
     open: {
         display: 'flex',
         justifyContent: 'center',
+    },
+    modalTitle: {
+        display: 'flex',
+        alignItems: 'center',
+        borderBottom: '1px solid #cac9c9',
+
+        '& span': {
+            textAlign: 'center',
+            flex: '0 0 98%',
+        }
+    },
+    closeBtn: {
+        flex: '0 0 2%',
+        cursor: 'pointer',
     }
 })
