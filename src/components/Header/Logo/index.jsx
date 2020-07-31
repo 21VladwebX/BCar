@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from "react-router-dom/modules/Link";
+import {Link} from "react-router-dom";
 import logo from 'src/assets/img/logo.png';
 
 const Logo = () => {
