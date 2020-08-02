@@ -14,6 +14,7 @@ export default theme => ({
         maxWidth: 1120,
         minWidth: 480,
         margin: 'auto',
+        background: '#bbbbbb'
     },
     open: {
         display: 'flex',

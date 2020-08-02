@@ -2,16 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {createUseStyles} from 'react-jss';
 import classNames from 'classnames';
+import PropTypes from "prop-types";
 import CloseIcon from '@material-ui/icons/Close';
 import styles from './styles';
+
 const useStyles = createUseStyles(styles);
 
-const Modal = ({shouldShowModal, toggle, title, children}) => {
+const propTypes = {
+    title: PropTypes.string,
+    toggle: PropTypes.func,
+    children: PropTypes.elementType,
+}
+const Modal = ({toggle, title, children}) => {
     const classes = useStyles();
 
-    const wrapperClasses = classNames(classes.wrapper, {
-        [classes.open]: shouldShowModal
-    })
+    const wrapperClasses = classNames(classes.wrapper, classes.open)
 
     const modalJSX =
       <div className={wrapperClasses}>
@@ -31,7 +36,11 @@ const Modal = ({shouldShowModal, toggle, title, children}) => {
       ReactDOM.createPortal(modalJSX, document.body)
     );
 }
-
-const ModalWrapper = ({shouldShowModal, ...rest}) => shouldShowModal ?   <Modal { ...{shouldShowModal, ...rest} }/>: null;
+Modal.propTypes = propTypes;
+const modalWrapperPropTypes = {
+    shouldShowModal: PropTypes.bool
+}
+const ModalWrapper = ({shouldShowModal, ...rest}) => shouldShowModal ?   <Modal { ...rest }/>: null;
+ModalWrapper.propTypes = modalWrapperPropTypes;
 
 export default ModalWrapper;

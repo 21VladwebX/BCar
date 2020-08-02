@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter as Router} from 'react-router-dom'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 ReactDOM.render(
-  <React.StrictMode>
-      <Router>
-        <App />
-      </Router>
-  </React.StrictMode>,
+  <Router>
+    <App />
+  </Router>,
   document.getElementById('root')
 );
 
