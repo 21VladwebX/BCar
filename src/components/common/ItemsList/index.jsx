@@ -5,7 +5,7 @@ import styles from './styles';
 
 const useStyles = createUseStyles(styles);
 const propTypes = {
-  children: PropTypes.elementType,
+  children: PropTypes.node
 }
 const ItemsList = ({children}) => {
   const classes = useStyles();

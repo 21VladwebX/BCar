@@ -38,14 +38,14 @@ const Home = () => {
     return (
         <div className={classes.wrapper}>
             <SliderWrapper />
-            <div>
+            <div className={classes.employeesWrapper}>
               <h2 style={{textAlign: "center"}}> Our employees</h2>
+              <ItemsList >
+                {mockEmployeesData.map(({id,...rest})=>(
+                  <Employee key={id} {...rest}/>
+                ))}
+              </ItemsList>
             </div>
-            <ItemsList >
-              {mockEmployeesData.map(({id,...rest})=>(
-                <Employee key={id} {...rest}/>
-              ))}
-            </ItemsList>
             <div className={classes.letsFind}>
               <h3>Lets find the best car for you?</h3>
               <Link to='/autos'>

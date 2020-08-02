@@ -1,13 +1,17 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
-import Home from '../Home'
+import Home from '../Home';
+import Autos from "pages/Autos";
+import AutoDetail from 'pages/Autos/AutoDetail';
+
 const Routes = () => {
     return (
         <div>
             <Switch>
-                {/*<Route path="/autos">*/}
-                {/*    <About />*/}
-                {/*</Route>*/}
+                <Route exact path="/autos">
+                    <Autos />
+                </Route>
+                <Route path="/autos/:id" component={AutoDetail} />
                 {/*<Route path="/employees">*/}
                 {/*    <Users />*/}
                 {/*</Route>*/}

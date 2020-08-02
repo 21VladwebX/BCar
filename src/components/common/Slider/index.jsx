@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const propTypes = {
   settings: PropTypes.object, //there can be a lot of items
-  children: PropTypes.elementType
+  children: PropTypes.node
 };
 
 const Slider = ({settings, children}) => {
